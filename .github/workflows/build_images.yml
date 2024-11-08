@@ -32,14 +32,14 @@ jobs:
           context: .
           push: true
           file: Dockerfile
-          tags: romeprotocol/openzeppelin-contracts:${{env.REF_NAME}}
-          labels: romeprotocol/openzeppelin-contracts:${{env.REF_NAME}}
+          tags: romelabs/openzeppelin-contracts:${{env.REF_NAME}}
+          labels: romelabs/openzeppelin-contracts:${{env.REF_NAME}}
 
       - name: 'Set latest tag'
         if: |
           ( ${{github.ref_name}} == 'main' )
         run: |
           
-          docker pull romeprotocol/openzeppelin-contracts:${REF_NAME}
-          docker tag romeprotocol/openzeppelin-contracts:${REF_NAME} romeprotocol/openzeppelin-contracts:latest
-          docker push romeprotocol/openzeppelin-contracts:latest
+          docker pull romelabs/openzeppelin-contracts:${REF_NAME}
+          docker tag romelabs/openzeppelin-contracts:${REF_NAME} romelabs/openzeppelin-contracts:latest
+          docker push romelabs/openzeppelin-contracts:latest
